@@ -2,7 +2,7 @@
 
 //ESRI tiles attribution and URL
 var esriLink = '<a href="http://www.esri.com/">Esri</a>';
-var esriURL = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+var esriURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
 var esriAttrib = '&copy; ' + osmLink;
 
 //OSM tiles attribution and URL
