@@ -42,12 +42,21 @@ var selectedStyle = {
     fillOpacity: 0
 };
 
+// var hoverStyle = {
+//     "color": "red",
+//     "weight": 3,
+//     "opacity": 0.5,
+//     fillOpacity: 0
+// };
+
 var burnScarStyle = {
     "color": "orange",
     "weight": 0,
     "opacity": 1,
     fillOpacity: 0.5
 };
+
+
 
 // Update style when sub-region selected by mouse click
 var prevLayerClicked = null;
@@ -102,9 +111,22 @@ map.on('baselayerchange', function(e, layer) {
 // data layers
 
 // burns scar layer
+
+function onEachBurnFeature(feature, layer) {
+    layer.on({
+        mouseover: function(e) {
+            layer.setStyle({weight: 1});
+        },
+        mouseout: function(e) {
+            layer.setStyle({weight: 0});
+        }
+    });
+}
+
 var burnScarLayer = L.geoJSON(
     burnScar, {
-        style: burnScarStyle
+        style: burnScarStyle,
+        onEachFeature: onEachBurnFeature
     }
 ).bindPopup( function (layer) {
     var year =  layer.feature.properties.fih_year1;
