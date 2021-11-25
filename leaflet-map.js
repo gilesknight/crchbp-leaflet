@@ -27,9 +27,9 @@ L.control.layers(baseLayers).addTo(map);
 // show the scale bar on the lower left corner
 L.control.scale({imperial: false, metric: true}).addTo(map);
 
-// Styles for ibra regions when selected/unselected
+// Styles for layers
 var unselectedStyle = {
-    "color": "white",
+    "color": "#ededed",
     "weight": 1,
     "opacity": 1,
     fillOpacity: 0
@@ -42,24 +42,32 @@ var selectedStyle = {
     fillOpacity: 0
 };
 
+var burnScarStyle = {
+    "color": "orange",
+    "weight": 0,
+    "opacity": 1,
+    fillOpacity: 0.5
+};
+
 // Update style when sub-region selected by mouse click
 var prevLayerClicked = null;
+
 function onEachFeature(feature, layer) {
     //bind click
     layer.on({
         click: function(e) {
             if (prevLayerClicked !== null) {
-                prevLayerClicked.setStyle(
-                    unselectedStyle
-                );
+                 map.removeLayer(group);
             }
+
+            group = L.featureGroup().addTo(map);
             var layerClicked = e.target;
-            layerClicked.bringToFront();
-            layerClicked.setStyle(
-                selectedStyle
-            );
+
+            var selected = L.geoJSON(e.target.feature, {style: selectedStyle, interactive: false});
+            selected.addTo(group);
+
             console.log("IBRA Sub-region: " + layerClicked.feature.properties.SUB_CODE_7);  // print selected sub code to console
-            prevLayerClicked = layerClicked;
+            prevLayerClicked = layerClicked.feature;
         }
     });
 }
@@ -91,7 +99,24 @@ map.on('baselayerchange', function(e, layer) {
     }
 });
 
+// data layers
 
+// burns scar layer
+var burnScarLayer = L.geoJSON(
+    burnScar, {
+        style: burnScarStyle
+    }
+).bindPopup( function (layer) {
+    var year =  layer.feature.properties.fih_year1;
+    var type =  layer.feature.properties.type;
+    return "<b>Type:</b> " + type + "<br><b>Year:</b> " + year;
+});
 
+// data layers for control
+var dataLayers = {
+    "Burn scar data": burnScarLayer
+};
 
+// add control to map
+L.control.layers(null,dataLayers).addTo(map);
 
