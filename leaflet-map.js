@@ -1,9 +1,9 @@
 // IBRA SUB-REGION LEAFLET MAP
 
 //ESRI tiles attribution and URL
-var esriLink = '<a href="http://www.esri.com/">Esri</a>';
+var esriLink = '<a href="http://www.esri.com/">ESRI</a>';
 var esriURL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
-var esriAttrib = '&copy; ' + osmLink;
+var esriAttrib = '&copy; ' + esriLink;
 
 //OSM tiles attribution and URL
 var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
