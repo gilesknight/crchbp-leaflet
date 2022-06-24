@@ -1,0 +1,20 @@
+{
+    "bounds": "112.5769,-43.9454,153.9734,-8.6462",
+    "format": "png8",
+    "interactivity": "false",
+    "minzoom": "5",
+    "maxzoom": "12",
+    "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+    "scale": "1",
+    "metatile": "2",
+    "id": "CRCHBP_tiles",
+    "_updated": "1639106233000",
+    "name": "CRCHBP",
+    "description": "",
+    "lastBrowsedFolder": "/Users/gilesknight/Documents/Work/UWA/OneDrive - The University of Western Australia/Projects/CRCHBP/IBRA",
+    "tilejson": "2.0.0",
+    "scheme": "xyz",
+    "template": "",
+    "version": "1.0.0",
+    "json": "{\"Stylesheet\":[{\"data\":\"//Map {\\n//  background-color: #b8dee6;\\n//}\\n\\n//#countries {\\n//  ::outline {\\n//    line-color: #85c5d3;\\n//    line-width: 2;\\n//    line-join: round;\\n//  }\\n//  polygon-fill: #fff;\\n//}\\n\\n#ibra3857 {\\n  ::shape {\\n    line-color: black;\\n    line-width:0.5;\\n    polygon-opacity:1;\\n    polygon-fill:transparent;\\n  }\\n  ::label {\\n    [zoom > 7]{\\n      text-name: [SUB_NAME_7];\\n      text-face-name: 'Arial Regular';\\n    }\\n  }\\n}\\n\\n\",\"id\":\"style.mss\"}],\"Layer\":[{\"id\":\"countries\",\"name\":\"countries\",\"srs\":\"+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over\",\"geometry\":\"polygon\",\"Datasource\":{\"file\":\"/Users/gilesknight/Documents/MapBox/project/CRCHBP_tiles/layers/countries/82945364-10m-admin-0-countries.shp\",\"type\":\"shape\"},\"layerId\":\"countries\"},{\"geometry\":\"polygon\",\"extent\":[72.57737629000002,-54.776992952999976,167.99813991599999,-9.141290000000028],\"id\":\"ibra3857\",\"class\":\"\",\"Datasource\":{\"file\":\"/Users/gilesknight/Documents/MapBox/project/CRCHBP_tiles/layers/ibra3857.geojson\",\"layer\":\"OGRGeoJSON\",\"id\":\"ibra3857\",\"project\":\"CRCHBP_tiles\",\"srs\":\"\",\"type\":\"ogr\"},\"layer\":null,\"srs-name\":\"autodetect\",\"srs\":\"+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over\",\"advanced\":{},\"name\":\"ibra3857\",\"layerId\":\"ibra3857\"}],\"tiles\":[\"http://127.0.0.1:20008/tile/CRCHBP_tiles/{z}/{x}/{y}.png?updated=1639106233000&metatile=2&scale=1\"],\"grids\":[\"http://127.0.0.1:20008/tile/CRCHBP_tiles/{z}/{x}/{y}.grid.json?updated=1639106233000&metatile=2&scale=1\"]}"
+}
